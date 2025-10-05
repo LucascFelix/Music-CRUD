@@ -1,0 +1,56 @@
+<div class="container">
+      <div class="row">
+          <div class="co">
+              <div class="display-6 text-center">Cadastro de Musicas</div>
+              <form [formGroup]="formGroupMusic">
+                  <div class="mb-3">
+                      <label for="inputName" class="form-label">Nome</label>
+                      <input formControlName="name" type="text" class="form-control" id="inputName">
+                      </div>
+                  <div class="mb-3">
+                      <label for="inputArtista" class="form-label">Artista</label>
+                      <input formControlName="artista" type="text" class="form-control" id="inputArtista">
+                      </div>
+                  <div class="mb-3">
+                      <label for="inputBanda" class="form-label">Banda</label>
+                      <input formControlName="banda" type="text" class="form-control" id="inputBanda">
+                      </div>
+                  <div class="mb-3">
+                      <label for="inputGenero" class="form-label">Genero</label>
+                      <input formControlName="genero" type="text" class="form-control" id="inputGenero">
+                      </div>
+                  <div class="mb-3">
+                      <label for="inputAno" class="form-label">Ano</label>
+                      <input formControlName="ano" type="text" class="form-control" id="inputAno">
+                      </div>
+                  <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
+                  </form>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Musica</th>
+                        <th scope="col">Artista</th>
+                        <th scope="col">Banda</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Ano</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let m of musicas">
+                        <th scope="row">{{m.name}}</th>
+                        <td>{{m.artista}}</td>
+                        <td>{{m.banda}}</td>
+                        <td>{{m.genero}}</td>
+                        <td>{{m.ano}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="delete(m)">
+                                Remover
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+             
+        </div>
+          </div>
+</div>
