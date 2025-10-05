@@ -15,13 +15,17 @@ export class MusicService {
     return this.http.get<ModelMusic[]>(this.apiUrl);
   }
 
-  save(product: ModelMusic): Observable<ModelMusic>{
-    return this.http.post<ModelMusic>(this.apiUrl, product);
+  save(musicas: ModelMusic): Observable<ModelMusic>{
+    return this.http.post<ModelMusic>(this.apiUrl, musicas);
   }
 
-  delete(product: ModelMusic): Observable<void>{
-    return this.http.delete<void>(`${this.apiUrl}/${product.id}`);
+  delete(musicas: ModelMusic): Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}/${musicas.id}`);
  }
+
+ update(musicas: ModelMusic): Observable<ModelMusic>{
+    return this.http.put<ModelMusic>(`${this.apiUrl}/${musicas.id}`, musicas);
+}
 
 
 

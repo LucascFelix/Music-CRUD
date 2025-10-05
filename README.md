@@ -1,59 +1,39 @@
-# Musicas
+# 🎵 CRUD de Músicas - Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+Este projeto foi desenvolvido em Angular como forma de prática e aprendizado. O sistema realiza um CRUD de músicas, permitindo cadastrar, ler, editar e apagar registros de forma simples. As funcionalidades incluem: cadastrar músicas, listar músicas cadastradas, editar músicas existentes e excluir músicas. As tecnologias utilizadas são Angular CLI, TypeScript, HTML / CSS e JSON Server (para simular o backend).
 
-## Development server
+Exemplo de db.json (crie um arquivo chamado db.json na raiz do projeto):
 
-To start a local development server, run:
+{
+  "musicas": [
+    {
+      "id": 1,
+      "name": "Bohemian Rhapsody",
+      "artista": "Freddie Mercury",
+      "banda": "Queen",
+      "genero": "Rock",
+      "ano": 1975
+    },
+    {
+      "id": 2,
+      "name": "Imagine",
+      "artista": "John Lennon",
+      "banda": "",
+      "genero": "Pop",
+      "ano": 1971
+    },
+    {
+      "id": 3,
+      "name": "Billie Jean",
+      "artista": "Michael Jackson",
+      "banda": "",
+      "genero": "Pop",
+      "ano": 1982
+    }
+  ]
+}
 
-```bash
-ng serve
-```
+Como Executar o Projeto: Abra o terminal na pasta do projeto e instale as dependências executando: npm install. Em seguida, inicie o backend (JSON Server) com: json-server --watch db.json. Por fim, inicie a aplicação Angular com: ng s -o. Após isso, o navegador abrirá automaticamente em http://localhost:4200.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Desenvolvido por Lucas Calori. Projeto desenvolvido apenas para fins de estudo e prática com Angular.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

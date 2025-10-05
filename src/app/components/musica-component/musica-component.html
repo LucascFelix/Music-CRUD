@@ -23,8 +23,10 @@
                       <label for="inputAno" class="form-label">Ano</label>
                       <input formControlName="ano" type="text" class="form-control" id="inputAno">
                       </div>
-                  <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
-                  </form>
+                  <button *ngIf="!isEditing" type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
+                <button *ngIf="isEditing" type="submit" class="btn btn-primary" (click)="update()">Atualizar</button>  
+            </form>
+
             <table class="table">
                 <thead>
                     <tr>
@@ -43,8 +45,11 @@
                         <td>{{m.genero}}</td>
                         <td>{{m.ano}}</td>
                         <td>
-                            <button class="btn btn-danger" (click)="delete(m)">
-                                Remover
+                            <button class="btn btn-danger" (click)="delete(m)">Remover</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-secondary" (click)="onClickUpdate(m)">
+                                Alterar
                             </button>
                         </td>
                     </tr>
